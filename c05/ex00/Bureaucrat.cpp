@@ -20,6 +20,16 @@ Bureaucrat::Bureaucrat(const std::string& name, int grade) : name(name), grade(g
         throw GradeTooLowException();
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat& other) : name(other.name), grade(other.grade)
+{}
+
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
+{
+    if (this != &other)
+        this->grade = other.grade;
+    return *this;
+}
+
 Bureaucrat::~Bureaucrat(){}
 
 const std::string& Bureaucrat::getName() const

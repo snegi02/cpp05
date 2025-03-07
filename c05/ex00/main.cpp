@@ -16,10 +16,11 @@ int main()
 {
     try
     {
-        Bureaucrat bob("bob", 2);
-        bob.incrementGrade();
+        Bureaucrat bob("bob", 150);
+        bob.decrementGrade();
         std::cout<< bob << std::endl;
-        bob.incrementGrade();
+        bob.decrementGrade();
+        std::cout<< bob << std::endl;
     }
     catch(const std::exception& e)
     {
