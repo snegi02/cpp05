@@ -34,6 +34,8 @@ class AForm
 
     public:
         AForm(const std::string& name, int gradeToSign, int gradeToExecute);
+        AForm(const AForm& other);
+        AForm& operator=(const AForm& other);
         virtual ~AForm();
         const std::string& getName() const;
         virtual const std::string& getTarget() const;

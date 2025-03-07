@@ -18,6 +18,16 @@ AForm::AForm(const std::string& name, int gradeToSign, int gradeToExecute): name
     checkGrade(gradeToExecute);
 }
 
+AForm::AForm(const AForm& other): name(other.name), signedStatus(other.signedStatus), gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute)
+{}
+
+AForm& AForm::operator=(const AForm& other)
+{
+    if(this != &other)
+        this->signedStatus = other.signedStatus;
+    return *this;
+}
+
 AForm::~AForm(){}
 
 const std::string& AForm::getName() const
