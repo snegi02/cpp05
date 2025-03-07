@@ -23,12 +23,14 @@ int main() {
             ShrubberyCreationForm shrubberyForm("home");
             RobotomyRequestForm Robo("ro");
             PresidentialPardonForm perp("alex");
+            PresidentialPardonForm abc(perp);
             bob.signForm(shrubberyForm);
             bob.signForm(Robo);
             bob.signForm(perp);
             shrubberyForm.execute(bob);
             Robo.execute(bob);
             perp.execute(bob);
+            abc.execute(bob);
 
            Bureaucrat sheetal("Sheetal", 130);
             sheetal.executeForm(shrubberyForm);
