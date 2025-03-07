@@ -27,6 +27,8 @@ class Form
         void checkGrade(int grade) const;
     public:
         Form(const std::string& name, int gradeToSign, int gradeToExecute);
+        Form(const Form& other);
+        Form& operator=(const Form& other);
         ~Form();
         const std::string& getName() const;
         bool isSigned() const;

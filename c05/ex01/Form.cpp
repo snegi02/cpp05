@@ -12,10 +12,20 @@
 
 #include "Form.hpp"
 
-Form::Form(const std::string& name, int gradeToSign, int gradeToExecute): name(name), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
+Form::Form(const std::string& name, int gradeToSign, int gradeToExecute): name(name), signedStatus(false), gradeToSign(gradeToSign), gradeToExecute(gradeToExecute)
 {
     checkGrade(gradeToSign);
     checkGrade(gradeToExecute);
+}
+
+Form::Form(const Form& other): name(other.name), signedStatus(other.signedStatus), gradeToSign(other.gradeToSign), gradeToExecute(other.gradeToExecute)
+{}
+
+Form& Form::operator=(const Form& other)
+{
+    if(this != &other)
+        this->signedStatus = other.signedStatus;
+    return *this;
 }
 
 Form::~Form(){}
